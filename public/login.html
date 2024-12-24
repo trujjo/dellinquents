@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/auth_check.js"></script>
+    <title>Login - Dell Med After Dark</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #121212;
+            color: #f5f5f5;
+        }
+        .login-container {
+            background: #1f1f1f;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            width: 100%;
+            max-width: 400px;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        input {
+            padding: 0.5rem;
+            border: 1px solid #333;
+            border-radius: 4px;
+            background: #2f2f2f;
+            color: #f5f5f5;
+        }
+        button {
+            padding: 0.5rem;
+            background: #cc5500;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #a44400;
+        }
+        .error-message {
+            color: #ff4444;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Dell Med After Dark Login</h2>
+        <form id="loginForm" class="login-form">
+            <input type="password" id="password" placeholder="Enter password" required>
+            <button type="submit">Login</button>
+            <p id="errorMessage" class="error-message"></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const enteredPassword = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            try {
+                const response = await fetch('/check-password', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ password: enteredPassword }),
+                });
+
+                if (!response.ok) {
+                    throw new Error('Incorrect password');
+                }
+
+                // Set authentication in localStorage
+                localStorage.setItem('authenticated', 'true');
+                // Redirect to main page
+                window.location.href = 'index.html';
+            } catch (error) {
+                errorMessage.style.display = 'block';
+                errorMessage.textContent = error.message;
+                document.getElementById('password').value = '';
+            }
+        });
+
+        // Check if user is already authenticated
+        function checkAuth() {
+            if (localStorage.getItem('authenticated') === 'true') {
+                window.location.href = 'index.html';
+            }
+        }
+
+        checkAuth();
+    </script>
+</body>
+</html>
