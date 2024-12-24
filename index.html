@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="/auth_check.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Dell Med After Dark</title>
+    <title>Dell Med After Dark</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .discord-invite {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #7289da;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .discord-invite:hover {
-            background-color: #5a6fb2;
-        }
-    </style>
+    <!-- Add Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="auth_check.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Dell Med After Dark</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="senate.html">Senate</a>
-            <a href="umec.html">UMEC</a>
-            <a href="calendar.html">Calendar of Events</a>
-            <a href="resources.html">Resources</a>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Welcome</h2>
-            <p>Welcome to the Dell Med Underground website. Hoping this sites becomes a refuge for all the important information needed to survive med school. Join our Discord page for real-time discussion and interaction with our student orgs.</p>
-            <a href="https://discord.gg/K62z3HGAUe" class="discord-invite">Dell Med After Dark Discord</a>
-        </section>
-        <section>
-            <h2>Instagram Feed</h2>
-            <iframe src="https://www.instagram.com/dellmedschool/embed" width="400" height="500" frameborder="0" scrolling="yes" allowtransparency="true"></iframe>
-        </section>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">Dell Med After Dark</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/senate.html">Senate</a>
+                <a href="/umec.html">UMEC</a>
+                <a href="/calendar.html">Calendar</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="card animate-in">
+            <h1>Welcome to Dell Med After Dark</h1>
+            <p>Your insider's guide to Dell Medical School updates and information.</p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="feature-card animate-in">
+                <h2>Senate Updates</h2>
+                <p>Latest updates and minutes from student senate meetings.</p>
+                <a href="/senate.html" class="btn">View Updates</a>
+            </div>
+
+            <div class="feature-card animate-in">
+                <h2>UMEC Notes</h2>
+                <p>Important information from UMEC meetings.</p>
+                <a href="/umec.html" class="btn">View Notes</a>
+            </div>
+
+            <div class="feature-card animate-in">
+                <h2>Calendar</h2>
+                <p>Upcoming events and important dates.</p>
+                <a href="/calendar.html" class="btn">View Calendar</a>
+            </div>
+        </div>
     </main>
+
     <footer>
-        <p>&copy; 2024 Dell Med After Dark</p>
+        <p>© 2024 Dell Med After Dark. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
