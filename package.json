@@ -4,9 +4,10 @@
     "description": "Dell Med Underground website",
     "main": "server.js",
     "scripts": {
-      "start": "node server.js"
+        "start": "node server.js"
     },
     "dependencies": {
-      "express": "^4.17.1"
+        "dotenv": "^16.4.7",
+        "express": "^4.17.1"
     }
-  }
+}
