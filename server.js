@@ -1,33 +1,32 @@
 const express = require('express');
-const app = express();
 const path = require('path');
+const app = express();
 
-// Middleware to parse JSON bodies
-app.use(express.json());
+// Middleware to protect the site
+const checkPassword = (req, res, next) => {
+    const password = req.query.password;
+    const correctPassword = "nelson"; // Change this to your desired password
 
-// Serve static files from the current directory (not from 'public')
-app.use(express.static(__dirname));
-
-// Password check endpoint
-app.post('/check-password', (req, res) => {
-    const { password } = req.body;
-    const correctPassword = process.env.SITE_PASSWORD;
-    
-    console.log('Password attempt received'); // Add logging
-    
-    if (password === correctPassword) {
-        res.status(200).json({ message: 'Success' });
-    } else {
-        res.status(401).json({ message: 'Incorrect password' });
+    // Allow access to the password page and static assets without a password
+    if (req.path === '/password.html' || req.path.startsWith('/style.css') || req.path.startsWith('/images/')) {
+        return next();
     }
-});
 
-// Catch-all route to serve index.html
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
+    if (password === correctPassword) {
+        return next(); // Allow access if password matches
+    } else {
+        return res.redirect('/password.html'); // Redirect to password prompt if password is incorrect or not provided
+    }
+};
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+// Use middleware to protect static files
+app.use(checkPassword);
+
+// Serve static files (your website)
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
