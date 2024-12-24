@@ -1,12 +1,11 @@
-/* Modern Light Theme with Subtle Accents */
+/* Modern Dark Gray Theme with Burnt Orange Accents */
 :root {
-    --primary-color: #cc5500;
-    --bg-light: #f8f9fa;
-    --bg-white: #ffffff;
-    --bg-nav: rgba(255, 255, 255, 0.95);
-    --text-primary: #2d3436;
-    --text-secondary: #636e72;
-    --border-color: #e0e0e0;
+    --primary-color: #cc5500; /* Burnt Orange */
+    --bg-dark: #2b2b2b; /* Dark Gray */
+    --bg-card: #3a3a3a; /* Slightly Lighter Gray */
+    --text-primary: #ffffff; /* White */
+    --text-secondary: #d1d1d1; /* Light Gray */
+    --border-color: #4a4a4a; /* Subtle Border Gray */
     --transition: all 0.3s ease;
 }
 
@@ -18,7 +17,7 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color: var(--bg-light);
+    background-color: var(--bg-dark);
     color: var(--text-primary);
     line-height: 1.6;
     min-height: 100vh;
@@ -26,13 +25,14 @@ body {
 
 /* Modern Navigation */
 .navbar {
-    background: var(--bg-nav);
+    background: var(--bg-card);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .nav-container {
@@ -109,7 +109,7 @@ body {
 
 /* Modern Cards */
 .card {
-    background: var(--bg-white);
+    background: var(--bg-card);
     border-radius: 16px;
     padding: 2rem;
     margin-bottom: 2rem;
@@ -119,14 +119,14 @@ body {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Typography */
 h1, h2, h3 {
     font-weight: 700;
     margin-bottom: 1rem;
-    color: var(--text-primary);
+    color: var(--primary-color);
 }
 
 h1 {
@@ -176,7 +176,7 @@ p {
 
 /* Footer */
 footer {
-    background: var(--bg-white);
+    background: var(--bg-card);
     padding: 2rem 0;
     margin-top: 4rem;
     text-align: center;
@@ -199,7 +199,7 @@ footer {
         position: absolute;
         top: 100%;
         left: 0;
-        background: var(--bg-nav);
+        background: var(--bg-card);
         border-top: 1px solid var(--border-color);
     }
     
