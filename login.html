@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="/auth_check.js"></script>
     <title>Login - Dell Med After Dark</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -62,6 +62,11 @@
     </div>
 
     <script>
+        // Check if already authenticated
+        if (localStorage.getItem('authenticated') === 'true') {
+            window.location.href = '/index.html';
+        }
+
         document.getElementById('loginForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const enteredPassword = document.getElementById('password').value;
@@ -76,29 +81,18 @@
                     body: JSON.stringify({ password: enteredPassword }),
                 });
 
-                if (!response.ok) {
+                if (response.ok) {
+                    localStorage.setItem('authenticated', 'true');
+                    window.location.href = '/index.html';
+                } else {
                     throw new Error('Incorrect password');
                 }
-
-                // Set authentication in localStorage
-                localStorage.setItem('authenticated', 'true');
-                // Redirect to main page
-                window.location.href = 'index.html';
             } catch (error) {
                 errorMessage.style.display = 'block';
                 errorMessage.textContent = error.message;
                 document.getElementById('password').value = '';
             }
         });
-
-        // Check if user is already authenticated
-        function checkAuth() {
-            if (localStorage.getItem('authenticated') === 'true') {
-                window.location.href = 'index.html';
-            }
-        }
-
-        checkAuth();
     </script>
 </body>
 </html>
