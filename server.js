@@ -1,39 +1,31 @@
 const express = require('express');
 const path = require('path');
-require('dotenv').config();
-
 const app = express();
 
-// Password middleware - place this FIRST
-const passwordProtect = (req, res, next) => {
-    const userPassword = req.query.password;
-    const correctPassword = process.env.PASSWORD;
+// Middleware to protect the site
+const checkPassword = (req, res, next) => {
+    const password = req.query.password;
+    const correctPassword = "DellSecret123"; // Change this to your desired password
 
-    if (!correctPassword) {
-        console.error('PASSWORD environment variable is not set!');
-        return res.status(500).send('Server configuration error');
-    }
-
-    if (userPassword === correctPassword) {
+    // Allow access to the password page without a password
+    if (req.path === '/password.html') {
         return next();
     }
 
-    res.status(401).send(`
-        <h1>Unauthorized</h1>
-        <p>You must provide the correct password to access this site.</p>
-        <form method="GET">
-            <label>Password: <input type="password" name="password"></label>
-            <button type="submit">Submit</button>
-        </form>
-    `);
+    if (password === correctPassword) {
+        return next(); // Allow access if password matches
+    } else {
+        return res.redirect('/password.html'); // Redirect to password prompt if password is incorrect or not provided
+    }
 };
 
-// Apply password protection to all routes
-app.use(passwordProtect);
+// Use middleware to protect static files
+app.use(checkPassword);
 
-// Then serve static files
+// Serve static files (your website)
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
