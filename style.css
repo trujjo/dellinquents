@@ -1,4 +1,4 @@
-/* Modern Dark Gray Theme with Burnt Orange Accents */
+/* Minimalistic Dark Gray Theme with Clean Labels */
 :root {
     --primary-color: #cc5500; /* Burnt Orange */
     --bg-dark: #2b2b2b; /* Dark Gray */
@@ -23,7 +23,7 @@ body {
     min-height: 100vh;
 }
 
-/* Modern Navigation */
+/* Minimalistic Navigation */
 .navbar {
     background: var(--bg-card);
     padding: 1rem 0;
@@ -31,7 +31,6 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -51,25 +50,6 @@ body {
     text-decoration: none;
 }
 
-/* Hamburger Menu */
-.nav-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-    padding: 5px;
-    background: transparent;
-    border: none;
-}
-
-.nav-toggle span {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background-color: var(--primary-color);
-    transition: var(--transition);
-}
-
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -80,22 +60,10 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
-    position: relative;
 }
 
-.nav-links a:after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--primary-color);
-    transition: var(--transition);
-}
-
-.nav-links a:hover:after {
-    width: 100%;
+.nav-links a:hover {
+    color: var(--primary-color);
 }
 
 /* Main Content */
@@ -107,39 +75,38 @@ body {
     margin-right: auto;
 }
 
-/* Modern Cards */
+/* Minimalistic Cards */
 .card {
     background: var(--bg-card);
-    border-radius: 16px;
-    padding: 2rem;
-    margin-bottom: 2rem;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
     border: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary-color);
 }
 
 /* Typography */
 h1, h2, h3 {
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--text-primary);
 }
 
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 p {
@@ -151,8 +118,8 @@ p {
 .btn {
     background: var(--primary-color);
     color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
     border: none;
     cursor: pointer;
     font-weight: 500;
@@ -163,52 +130,24 @@ p {
 
 .btn:hover {
     background: #a44400;
-    transform: translateY(-2px);
-}
-
-/* Cards Grid */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
 }
 
 /* Footer */
 footer {
     background: var(--bg-card);
-    padding: 2rem 0;
-    margin-top: 4rem;
+    padding: 1rem 0;
+    margin-top: 2rem;
     text-align: center;
     border-top: 1px solid var(--border-color);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-toggle {
-        display: flex;
-    }
-    
     .nav-links {
-        display: none;
-        width: 100%;
         flex-direction: column;
-        align-items: center;
         gap: 1rem;
-        padding: 1rem 0;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: var(--bg-card);
-        border-top: 1px solid var(--border-color);
-    }
-    
-    .nav-links.active {
-        display: flex;
-    }
-    
-    .nav-container {
-        flex-wrap: wrap;
     }
     
     .main-content {
@@ -216,26 +155,10 @@ footer {
     }
     
     h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     .card {
-        padding: 1.5rem;
+        padding: 1rem;
     }
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-in {
-    animation: fadeIn 0.6s ease-out forwards;
 }
