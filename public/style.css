@@ -13,7 +13,7 @@ header {
 }
 
 header h1 {
-    color: #00ffcc;
+    color: #cc5500; /* Burnt orange */
 }
 
 nav a {
@@ -24,12 +24,11 @@ nav a {
 }
 
 nav a:hover {
-    color: #00ffcc;
+    color: #cc5500; /* Burnt orange */
 }
 
 section {
     padding: 20px;
-    border-bottom: 1px solid #333;
 }
 
 footer {
