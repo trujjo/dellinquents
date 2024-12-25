@@ -59,8 +59,38 @@
             background-color: #5a6fb2;
         }
     </style>
-</head>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        a {
+            color: white !important;
+            text-decoration: none !important;
+        }
+        .content-container {
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+        .discord-link {
+            margin-top: 20px;
+        }
+    </style>
+    </head>
 <body>
+<div class="content-container">
     <header>
         <h1>Senate</h1>
         <nav>
@@ -72,10 +102,7 @@
         </nav>
     </header>
     <main>
-        <div class="container">
-            <div class="content">
-                <section>
-                    <a href="https://discord.gg/your-invite-link" class="discord-invite">Discord Server</a>
+
     <div style="margin-top: 20px;">
         <img src="1.png" alt="Senate Image" style="width: 300px; height: auto; margin: 10px;" />
         <img src="2.png" alt="Senate Image" style="width: 300px; height: auto; margin: 10px;" />
@@ -103,6 +130,11 @@
                     <iframe src="https://utexas.app.box.com/embed/s/lnolj8fqjls496vntopswc257tcalzuw?expandSidebars=true&showParentPath=false&sortColumn=name" 
                             title="View Minutes">Loading…</iframe>
                 </div>
+
+                        <div class="container">
+            <div class="content">
+                <section>
+                    <a href="https://discord.gg/your-invite-link" class="discord-invite">Discord Server</a>
             </div>
         </div>
     </main>
@@ -125,5 +157,6 @@
             event.currentTarget.classList.add('active');
         }
     </script>
+</div>
 </body>
 </html>
