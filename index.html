@@ -42,8 +42,88 @@
             border: none;
         }
     </style>
+    
+    <style>
+        .banner {
+            width: 100%;
+            height: 400px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .banner .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            z-index: 100;
+            color: white;
+            text-decoration: none;
+        }
+        .banner .arrow.left {
+            left: 10px;
+        }
+        .banner .arrow.right {
+            right: 10px;
+        }
+        .carousel-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .carousel-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .carousel-slide.active {
+            opacity: 1;
+        }
+        .carousel-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .instagram-feed {
+            margin: 20px auto;
+            text-align: center;
+        }
+        iframe {
+            width: 100%;
+            max-width: 500px;
+            height: 500px;
+            border: none;
+        }
+    </style>
     </head>
 <body>
+    <div class="banner">
+        <a class="arrow left" href="#">&#9664;</a>
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <img src="Derm_Resident_Social_Flyer.jpg" alt="Derm Resident Social">
+            </div>
+            <div class="carousel-slide">
+                <img src="AMIG_Fishbowl.jpg" alt="AMIG Fishbowl">
+            </div>
+            <div class="carousel-slide">
+                <img src="Blue_Watercolor_Flowy_Script_Style_Tranquill_Motivation_Instagram_Post.png" alt="Motivation Post">
+            </div>
+        </div>
+        <a class="arrow right" href="#">&#9654;</a>
+    </div>
+
     <div class="banner">
         <span class="arrow left">&#9664;</span>
         <span id="event-text">Upcoming Event 1</span>
@@ -109,5 +189,41 @@
     <footer>
         <p>© 2024 Dell Med After Dark. All rights reserved.</p>
     </footer>
+
+    <script>
+        const slides = document.querySelectorAll('.carousel-slide');
+        let currentSlide = 0;
+        let slideInterval = setInterval(nextSlide, 4000); // 4 second interval
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        function prevSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Reset interval when manually navigating
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 4000);
+        }
+
+        document.querySelector('.arrow.right').addEventListener('click', (e) => {
+            e.preventDefault();
+            nextSlide();
+            resetInterval();
+        });
+
+        document.querySelector('.arrow.left').addEventListener('click', (e) => {
+            e.preventDefault();
+            prevSlide();
+            resetInterval();
+        });
+    </script>
 </body>
 </html>
