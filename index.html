@@ -1,43 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dell Med After Dark</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dell Med After Dark</title>
+<link rel="stylesheet" href="style.css">
+<!-- Add Inter font -->
+<link href="https://fonts.googleapis.com/css?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="auth_check.js"></script>
+<style>
+.banner {
+width: 100%;
+background-color: #333;
+color: white;
+text-align: center;
+padding: 10px 0;
+position: relative;
+}
+.banner .arrow {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+font-size: 20px;
+cursor: pointer;
+}
+.banner .arrow.left {
+left: 10px;
+}
+.banner .arrow.right {
+right: 10px;
+}
+.instagram-feed {
+margin: 20px auto;
+text-align: center;
+}
+iframe {
+width: 100%;
+max-width: 500px;
+height: 500px;
+border: none;
+}
+</style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="senate.html">Senate</a>
-            <a href="umec.html">UMEC</a>
-            <a href="calendar.html">Calendar</a>
-            <a href="resources.html">Resources</a>
-        </nav>
-    </header>
+<main class="main-content">
+<div class="card animate-in">
+<h1>Welcome to Dell Med After Dark</h1>
+<p>Your survival guide to Dell Medical School updates and information.</p>
+</div>
+</main>
+<div class="banner-section">
+<div class="banner">
+<a class="arrow left" href="#">&#9664;</a>
+<span id="event-text">Upcoming Event 1</span>
+<a class="arrow right" href="#">&#9654;</a>
+</div>
+</div>
+<div class="instagram-feed">
+<iframe src="https://www.instagram.com/dellmedschool/embed" allowtransparency="true"></iframe>
+</div>
+<script>
+const events = ["Upcoming Event 1", "Upcoming Event 2", "Upcoming Event 3"];
+let currentEvent = 0;
 
-    <main>
-        <section id="home">
-            <h1>Welcome to Dell Med After Dark</h1>
-            <p>Your central hub for student life and activities at Dell Medical School.</p>
-        </section>
+document.querySelector('.arrow.left').addEventListener('click', () => {
+currentEvent = (currentEvent - 1 + events.length) % events.length;
+document.getElementById('event-text').textContent = events[currentEvent];
+});
 
-        <section id="featured">
-            <h2>Featured Events</h2>
-            <!-- Add your featured events here -->
-        </section>
-
-        <section id="announcements">
-            <h2>Latest Announcements</h2>
-            <!-- Add your announcements here -->
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Dell Med After Dark. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+document.querySelector('.arrow.right').addEventListener('click', () => {
+currentEvent = (currentEvent + 1) % events.length;
+document.getElementById('event-text').textContent = events[currentEvent];
+});
+</script>
+<nav class="navbar">
+<div class="nav-container">
+<a href="/" class="logo">Dell Med After Dark</a>
+<div class="nav-links">
+<a href="/">Home</a>
+<a href="/senate.html">Senate</a>
+<a href="/umec.html">UMEC</a>
+<a href="/calendar.html">Calendar</a>
+</div>
+</div>
+</nav>
 </body>
 </html>
