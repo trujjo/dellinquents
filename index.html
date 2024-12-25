@@ -1,326 +1,142 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dell Med After Dark</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Add Inter font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="auth_check.js"></script>
-
     <style>
-        .banner {
-            width: 100%;
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-        }
-        .banner .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 20px;
-            cursor: pointer;
-        }
-        .banner .arrow.left {
-            left: 10px;
-        }
-        .banner .arrow.right {
-            right: 10px;
-        }
-        .instagram-feed {
-            margin: 20px auto;
-            text-align: center;
-        }
-        iframe {
-            width: 100%;
-            max-width: 500px;
-            height: 500px;
-            border: none;
-        }
-    </style>
-    
-    <style>
-        .banner {
-            width: 100%;
-            height: 400px;
-            background-color: #333;
-            color: white;
-            text-align: center;
+        /* Reset default styles */
+        * {
+            margin: 0;
             padding: 0;
-            position: relative;
-            overflow: hidden;
+            box-sizing: border-box;
         }
-        .banner .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 30px;
-            cursor: pointer;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            z-index: 100;
-            color: white;
-            text-decoration: none;
+
+        body {
+            font-family: Arial, sans-serif;
+            padding-top: 60px; /* Space for fixed header */
         }
-        .banner .arrow.left {
-            left: 10px;
-        }
-        .banner .arrow.right {
-            right: 10px;
-        }
-        .carousel-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-        .carousel-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .carousel-slide.active {
-            opacity: 1;
-        }
-        .carousel-slide img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        .instagram-feed {
-            margin: 20px auto;
-            text-align: center;
-        }
-        iframe {
-            width: 100%;
-            max-width: 500px;
-            height: 500px;
-            border: none;
-        }
-    </style>
-    
-    <style>
-        .banner-section {
+
+        /* Header styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
             z-index: 1000;
+            padding: 15px 20px;
         }
-        .banner {
+
+        nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .banner .arrow {
-            font-size: 20px;
-            cursor: pointer;
-            margin: 0 10px;
-        }
-        .instagram-feed {
-            margin: 20px auto;
-            text-align: center;
-        }
-        .carousel-section {
-            margin: 20px auto;
-            text-align: center;
-        }
-        .carousel-container {
-            width: 100%;
-            height: 400px;
-            position: relative;
-            overflow: hidden;
-        }
-        .carousel-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .carousel-slide.active {
-            opacity: 1;
-        }
-        .carousel-slide img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-    </style>
-    
-    <style>
-        .banner-section {
-            width: 100%;
-            background-color: #333;
+
+        nav a {
             color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            z-index: 1000;
-        }
-        .banner {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-        .banner .arrow {
-            font-size: 20px;
-            cursor: pointer;
-            margin: 0 10px;
-        }
-        .instagram-feed {
-            margin: 20px auto;
-            text-align: center;
-        }
-        .carousel-section {
-            margin: 20px auto;
-            text-align: center;
-        }
-        .carousel-container {
-            width: 100%;
-            height: 400px;
-            position: relative;
-            overflow: hidden;
-        }
-        .carousel-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .carousel-slide.active {
-            opacity: 1;
-        }
-        .carousel-slide img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-    </style>
-    
-    <style>
-        .carousel-container {
-            width: 100%;
-            height: 400px;
-            position: relative;
-            overflow: hidden;
-            margin: 20px 0;
-        }
-        .carousel-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .carousel-slide.active {
-            opacity: 1;
-        }
-        .carousel-slide img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-            color: white;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            cursor: pointer;
-            z-index: 100;
             text-decoration: none;
+            padding: 8px 15px;
+            font-size: 16px;
         }
-        .arrow.left {
-            left: 10px;
+
+        nav a:hover {
+            background-color: #444;
+            border-radius: 4px;
         }
-        .arrow.right {
-            right: 10px;
+
+        /* Carousel styles */
+        .carousel-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 400px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* Main content styles */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .upcoming-events {
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 5px 0;
+            }
+
+            body {
+                padding-top: 120px; /* Increased space for stacked header items */
+            }
         }
     </style>
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#senate">Senate</a>
+            <a href="#umec">UMEC</a>
+            <a href="#calendar">Calendar</a>
+        </nav>
+    </header>
 
-        <main class="main-content">
-        <div class="card animate-in">
-            <h1>Welcome to Dell Med After Dark</h1>
-            <p>Your suvival guide to Dell Medical School updates and information.</p>
-        </div>
-
-    </main>
-    <div class="banner-section">
-        <div class="banner">
-            <a class="arrow left" href="#">&#9664;</a>
-            <span id="event-text">Upcoming Event 1</span>
-            <a class="arrow right" href="#">&#9654;</a>
-        </div>
-    </div>
-    <div class="instagram-feed">
-        <iframe src="https://www.instagram.com/dellmedschool/embed" allowtransparency="true"></iframe>
-    </div>
-    
-    </div>
-    <script>
-        const events = ["Upcoming Event 1", "Upcoming Event 2", "Upcoming Event 3"];
-        let currentEvent = 0;
-
-        document.querySelector('.arrow.left').addEventListener('click', () => {
-            currentEvent = (currentEvent - 1 + events.length) % events.length;
-            document.getElementById('event-text').textContent = events[currentEvent];
-        });
-
-        document.querySelector('.arrow.right').addEventListener('click', () => {
-            currentEvent = (currentEvent + 1) % events.length;
-            document.getElementById('event-text').textContent = events[currentEvent];
-        });
-    </script>
-    
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="logo">Dell Med After Dark</a>
-            <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/senate.html">Senate</a>
-                <a href="/umec.html">UMEC</a>
-                <a href="/calendar.html">Calendar</a>
+    <main>
+        <div class="upcoming-events">
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <img src="Derm_Resident_Social_Flyer.jpg" alt="Derm Resident Social">
+                </div>
+                <div class="carousel-slide">
+                    <img src="AMIG_Fishbowl.jpg" alt="AMIG Fishbowl">
+                </div>
+                <div class="carousel-slide">
+                    <img src="Blue_Watercolor_Flowy_Script_Style_Tranquill_Motivation_Instagram_Post.png" alt="Motivation Post">
+                </div>
             </div>
         </div>
-    </nav>
-
-
-
-    <footer>
-        <p>© 2024 Dell Med After Dark. All rights reserved.</p>
-    </footer>
+    </main>
 
     <script>
         const slides = document.querySelectorAll('.carousel-slide');
         let currentSlide = 0;
-        let slideInterval = setInterval(nextSlide, 4000); // 4 second interval
+        let slideInterval = setInterval(nextSlide, 3000);
 
         function nextSlide() {
             slides[currentSlide].classList.remove('active');
@@ -334,59 +150,10 @@
             slides[currentSlide].classList.add('active');
         }
 
-        // Reset interval when manually navigating
         function resetInterval() {
             clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 4000);
+            slideInterval = setInterval(nextSlide, 3000);
         }
-
-        document.querySelector('.arrow.right').addEventListener('click', (e) => {
-            e.preventDefault();
-            nextSlide();
-            resetInterval();
-        });
-
-        document.querySelector('.arrow.left').addEventListener('click', (e) => {
-            e.preventDefault();
-            prevSlide();
-            resetInterval();
-        });
     </script>
-
-    <script>
-        const slides = document.querySelectorAll('.carousel-slide');
-        let currentSlide = 0;
-        let slideInterval = setInterval(nextSlide, 4000); // 4 second interval
-
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-
-        function prevSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-
-        // Reset interval when manually navigating
-        function resetInterval() {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 4000);
-        }
-
-        document.querySelector('.carousel-section .arrow.right').addEventListener('click', (e) => {
-            e.preventDefault();
-            nextSlide();
-            resetInterval();
-        });
-
-        document.querySelector('.carousel-section .arrow.left').addEventListener('click', (e) => {
-            e.preventDefault();
-            prevSlide();
-            resetInterval();
-        });
-    </script>
-    </body>
+</body>
 </html>
