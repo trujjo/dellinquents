@@ -11,21 +11,33 @@
 <style>
 .banner {
 width: 100%;
+max-width: 800px; /* Constrain overall banner width */
+margin: 0 auto;
 background-color: #333;
 color: white;
 text-align: center;
 padding: 10px 0;
 position: relative;
 }
+.banner-container {
+width: 400px; /* Smaller window for images */
+height: 300px; /* Fixed height for consistent sizing */
+margin: 0 auto;
+overflow: hidden;
+position: relative;
+}
 .banner img {
 width: 100%;
-max-width: 500px;
-height: auto;
-display: none;
-margin: 0 auto;
+height: 100%;
+object-fit: contain; /* Maintain aspect ratio */
+position: absolute;
+top: 0;
+left: 0;
+opacity: 0;
+transition: opacity 0.5s ease-in-out; /* Smooth transition */
 }
 .banner img.active {
-display: block;
+opacity: 1;
 }
 .banner .arrow {
 position: absolute;
@@ -34,12 +46,28 @@ transform: translateY(-50%);
 font-size: 20px;
 cursor: pointer;
 color: white;
+z-index: 2;
+background: rgba(0,0,0,0.5);
+padding: 10px;
+text-decoration: none;
+border-radius: 50%;
 }
 .banner .arrow.left {
 left: 10px;
 }
 .banner .arrow.right {
 right: 10px;
+}
+.instagram-feed {
+width: 100%;
+max-width: 1000px; /* Larger Instagram feed */
+margin: 20px auto;
+text-align: center;
+}
+.instagram-feed iframe {
+width: 100%;
+height: 800px; /* Taller Instagram feed */
+border: none;
 }
 </style>
 </head>
@@ -50,8 +78,8 @@ right: 10px;
 <p>Your survival guide to Dell Medical School updates and information.</p>
 </div>
 </main>
-<div class="banner-section">
 <div class="banner">
+<div class="banner-container">
 <a class="arrow left" href="#">&#9664;</a>
 <img src="AMIG_Fishbowl.jpg" class="active" alt="AMIG Fishbowl Event">
 <img src="Derm_Resident_Social_Flyer.jpg" alt="Dermatology Resident Social">
