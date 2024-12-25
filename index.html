@@ -17,28 +17,29 @@ text-align: center;
 padding: 10px 0;
 position: relative;
 }
+.banner img {
+width: 100%;
+max-width: 500px;
+height: auto;
+display: none;
+margin: 0 auto;
+}
+.banner img.active {
+display: block;
+}
 .banner .arrow {
 position: absolute;
 top: 50%;
 transform: translateY(-50%);
 font-size: 20px;
 cursor: pointer;
+color: white;
 }
 .banner .arrow.left {
 left: 10px;
 }
 .banner .arrow.right {
 right: 10px;
-}
-.instagram-feed {
-margin: 20px auto;
-text-align: center;
-}
-iframe {
-width: 100%;
-max-width: 500px;
-height: 500px;
-border: none;
 }
 </style>
 </head>
@@ -52,7 +53,9 @@ border: none;
 <div class="banner-section">
 <div class="banner">
 <a class="arrow left" href="#">&#9664;</a>
-<span id="event-text">Upcoming Event 1</span>
+<img src="Derm_Resident_Social_Flyer.jpg" class="active" alt="Event 1">
+<img src="AMIG_Fishbowl.jpg" alt="Event 2">
+<img src="Blue_Watercolor_Flowy_Script_Style_Tranquill_Motivation_Instagram_Post.png" alt="Event 3">
 <a class="arrow right" href="#">&#9654;</a>
 </div>
 </div>
@@ -60,18 +63,33 @@ border: none;
 <iframe src="https://www.instagram.com/dellmedschool/embed" allowtransparency="true"></iframe>
 </div>
 <script>
-const events = ["Upcoming Event 1", "Upcoming Event 2", "Upcoming Event 3"];
-let currentEvent = 0;
+const images = document.querySelectorAll('.banner img');
+let currentIndex = 0;
 
-document.querySelector('.arrow.left').addEventListener('click', () => {
-currentEvent = (currentEvent - 1 + events.length) % events.length;
-document.getElementById('event-text').textContent = events[currentEvent];
-});
+function showImage(index) {
+    images.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) {
+            img.classList.add('active');
+        }
+    });
+}
 
-document.querySelector('.arrow.right').addEventListener('click', () => {
-currentEvent = (currentEvent + 1) % events.length;
-document.getElementById('event-text').textContent = events[currentEvent];
-});
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+}
+
+document.querySelector('.arrow.right').addEventListener('click', nextImage);
+document.querySelector('.arrow.left').addEventListener('click', prevImage);
+
+// Automatically cycle through images every 3 seconds
+setInterval(nextImage, 3000);
 </script>
 <nav class="navbar">
 <div class="nav-container">
