@@ -8,8 +8,65 @@
     <!-- Add Inter font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="auth_check.js"></script>
-</head>
+
+    <style>
+        .banner {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+        }
+        .banner .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .banner .arrow.left {
+            left: 10px;
+        }
+        .banner .arrow.right {
+            right: 10px;
+        }
+        .instagram-feed {
+            margin: 20px auto;
+            text-align: center;
+        }
+        iframe {
+            width: 100%;
+            max-width: 500px;
+            height: 500px;
+            border: none;
+        }
+    </style>
+    </head>
 <body>
+    <div class="banner">
+        <span class="arrow left">&#9664;</span>
+        <span id="event-text">Upcoming Event 1</span>
+        <span class="arrow right">&#9654;</span>
+    </div>
+    <div class="instagram-feed">
+        <iframe src="https://www.instagram.com/dellmedschool/embed" allowtransparency="true"></iframe>
+    </div>
+    <script>
+        const events = ["Upcoming Event 1", "Upcoming Event 2", "Upcoming Event 3"];
+        let currentEvent = 0;
+
+        document.querySelector('.arrow.left').addEventListener('click', () => {
+            currentEvent = (currentEvent - 1 + events.length) % events.length;
+            document.getElementById('event-text').textContent = events[currentEvent];
+        });
+
+        document.querySelector('.arrow.right').addEventListener('click', () => {
+            currentEvent = (currentEvent + 1) % events.length;
+            document.getElementById('event-text').textContent = events[currentEvent];
+        });
+    </script>
+    
     <nav class="navbar">
         <div class="nav-container">
             <a href="/" class="logo">Dell Med After Dark</a>
