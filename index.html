@@ -218,6 +218,14 @@
     </style>
     </head>
 <body>
+
+        <main class="main-content">
+        <div class="card animate-in">
+            <h1>Welcome to Dell Med After Dark</h1>
+            <p>Your suvival guide to Dell Medical School updates and information.</p>
+        </div>
+
+    </main>
     <div class="banner-section">
         <div class="banner">
             <a class="arrow left" href="#">&#9664;</a>
@@ -228,51 +236,7 @@
     <div class="instagram-feed">
         <iframe src="https://www.instagram.com/dellmedschool/embed" allowtransparency="true"></iframe>
     </div>
-    <div class="carousel-section">
-        <div class="carousel-container">
-            <div class="carousel-slide active">
-                <img src="Derm_Resident_Social_Flyer.jpg" alt="Derm Resident Social" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            </div>
-            <div class="carousel-slide">
-                <img src="AMIG_Fishbowl.jpg" alt="AMIG Fishbowl" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            </div>
-            <div class="carousel-slide">
-                <img src="Blue_Watercolor_Flowy_Script_Style_Tranquill_Motivation_Instagram_Post.png" alt="Motivation Post" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            </div>
-            <div class="carousel-slide active">
-                <img src="Derm_Resident_Social_Flyer.jpg" alt="Derm Resident Social">
-            </div>
-            <div class="carousel-slide">
-                <img src="AMIG_Fishbowl.jpg" alt="AMIG Fishbowl">
-            </div>
-            <div class="carousel-slide">
-                <img src="Blue_Watercolor_Flowy_Script_Style_Tranquill_Motivation_Instagram_Post.png" alt="Motivation Post">
-            </div>
-        </div>
-    </div>
-    <div class="carousel-section">
-        <div class="carousel-container">
-            <div class="carousel-slide active">
-                <img src="Derm_Resident_Social_Flyer.jpg" alt="Derm Resident Social" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            </div>
-            <div class="carousel-slide">
-                <img src="AMIG_Fishbowl.jpg" alt="AMIG Fishbowl" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            </div>
-            <div class="carousel-slide">
-                <img src="Blue_Watercolor_Flowy_Script_Style_Tranquill_Motivation_Instagram_Post.png" alt="Motivation Post" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            </div>
-            <div class="carousel-slide active">
-                <img src="Derm_Resident_Social_Flyer.jpg" alt="Derm Resident Social">
-            </div>
-            <div class="carousel-slide">
-                <img src="AMIG_Fishbowl.jpg" alt="AMIG Fishbowl">
-            </div>
-            <div class="carousel-slide">
-                <img src="Blue_Watercolor_Flowy_Script_Style_Tranquill_Motivation_Instagram_Post.png" alt="Motivation Post">
-            </div>
-        </div>
-        <a class="arrow left" href="#">&#9664;</a>
-        <a class="arrow right" href="#">&#9654;</a>
+    
     </div>
     <script>
         const events = ["Upcoming Event 1", "Upcoming Event 2", "Upcoming Event 3"];
@@ -301,13 +265,7 @@
         </div>
     </nav>
 
-    <main class="main-content">
-        <div class="card animate-in">
-            <h1>Welcome to Dell Med After Dark</h1>
-            <p>Your insider's guide to Dell Medical School updates and information.</p>
-        </div>
 
-    </main>
 
     <footer>
         <p>© 2024 Dell Med After Dark. All rights reserved.</p>
@@ -316,7 +274,7 @@
     <script>
         const slides = document.querySelectorAll('.carousel-slide');
         let currentSlide = 0;
-        let slideInterval = setInterval(nextSlide, 3000); // 4 second interval
+        let slideInterval = setInterval(nextSlide, 4000); // 4 second interval
 
         function nextSlide() {
             slides[currentSlide].classList.remove('active');
@@ -333,7 +291,7 @@
         // Reset interval when manually navigating
         function resetInterval() {
             clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 3000);
+            slideInterval = setInterval(nextSlide, 4000);
         }
 
         document.querySelector('.arrow.right').addEventListener('click', (e) => {
@@ -352,7 +310,7 @@
     <script>
         const slides = document.querySelectorAll('.carousel-slide');
         let currentSlide = 0;
-        let slideInterval = setInterval(nextSlide, 3000); // 4 second interval
+        let slideInterval = setInterval(nextSlide, 4000); // 4 second interval
 
         function nextSlide() {
             slides[currentSlide].classList.remove('active');
@@ -369,7 +327,7 @@
         // Reset interval when manually navigating
         function resetInterval() {
             clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 3000);
+            slideInterval = setInterval(nextSlide, 4000);
         }
 
         document.querySelector('.carousel-section .arrow.right').addEventListener('click', (e) => {
