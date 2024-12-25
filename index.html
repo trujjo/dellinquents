@@ -11,7 +11,7 @@
 <style>
 .banner {
 width: 100%;
-max-width: 800px; /* Constrain overall banner width */
+max-width: 800px;
 margin: 0 auto;
 background-color: #333;
 color: white;
@@ -20,8 +20,8 @@ padding: 10px 0;
 position: relative;
 }
 .banner-container {
-width: 400px; /* Smaller window for images */
-height: 300px; /* Fixed height for consistent sizing */
+width: 400px;
+height: 300px;
 margin: 0 auto;
 overflow: hidden;
 position: relative;
@@ -29,12 +29,12 @@ position: relative;
 .banner img {
 width: 100%;
 height: 100%;
-object-fit: contain; /* Maintain aspect ratio */
+object-fit: contain;
 position: absolute;
 top: 0;
 left: 0;
 opacity: 0;
-transition: opacity 0.5s ease-in-out; /* Smooth transition */
+transition: opacity 0.5s ease-in-out;
 }
 .banner img.active {
 opacity: 1;
@@ -60,13 +60,13 @@ right: 10px;
 }
 .instagram-feed {
 width: 100%;
-max-width: 1000px; /* Larger Instagram feed */
+max-width: 800px; /* Reduced from 1000px */
 margin: 20px auto;
 text-align: center;
 }
 .instagram-feed iframe {
 width: 100%;
-height: 800px; /* Taller Instagram feed */
+height: 600px; /* Reduced from 800px */
 border: none;
 }
 </style>
