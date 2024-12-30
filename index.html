@@ -4,20 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dell Med After Dark</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="auth_check.js"></script>
-    <style>
-        .banner-container img {
-            display: none;
-            transition: opacity 0.5s ease-in-out;
-            max-width: 100%; /* Ensure images fit within the card */
-            height: auto; /* Maintain aspect ratio */
-        }
-
-        .banner-container img.active {
-            display: block;
-        }
-    </style>
 </head>
 <body>
 <main class="main-content">
@@ -29,12 +19,14 @@
 
 <!-- Banner with Image Carousel -->
 <div class="banner card">
-    <div class="banner-container">
-        <a class="arrow left" href="#">&#9664;</a>
-        <img src="AMIG_Fishbowl.jpg" class="active" alt="AMIG Fishbowl Event">
-        <img src="Derm_Resident_Social_Flyer.jpg" alt="Dermatology Resident Social">
-        <img src="Blue_Watercolor_Flowy_Script_Style_Tranquill_Motivation_Instagram_Post.png" alt="Motivation Post">
-        <a class="arrow right" href="#">&#9654;</a>
+    <div class="banner-container swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="AMIG_Fishbowl.jpg" alt="AMIG Fishbowl Event"></div>
+            <div class="swiper-slide"><img src="Derm_Resident_Social_Flyer.jpg" alt="Dermatology Resident Social"></div>
+            <div class="swiper-slide"><img src="Blue_Watercolor_Flowy_Script_Style_Tranquill_Motivation_Instagram_Post.png" alt="Motivation Post"></div>
+        </div>
+        <div class="swiper-button-next arrow right"></div>
+        <div class="swiper-button-prev arrow left"></div>
     </div>
 </div>
 
@@ -44,33 +36,16 @@
 </div>
 
 <script>
-const images = document.querySelectorAll('.banner img');
-let currentIndex = 0;
-
-function showImage(index) {
-    images.forEach((img, i) => {
-        img.classList.remove('active');
-        if (i === index) {
-            img.classList.add('active');
-        }
-    });
-}
-
-function nextImage() {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
-}
-
-function prevImage() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
-}
-
-document.querySelector('.arrow.right').addEventListener('click', nextImage);
-document.querySelector('.arrow.left').addEventListener('click', prevImage);
-
-// Automatically cycle through images every 3 seconds
-setInterval(nextImage, 3000);
+const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+        delay: 3000,
+    },
+});
 </script>
 
 <!-- Navigation Bar with Hamburger Menu -->
