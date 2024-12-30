@@ -278,3 +278,23 @@ table td {
 .arrow.right {
     right: 10px;
 }
+
+/* Buttons */
+.btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    margin: 10px 0; /* Add some spacing between buttons */
+}
+
+.btn:hover {
+    background: #a44400;
+}
