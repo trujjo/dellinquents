@@ -87,8 +87,10 @@
         .discord-link {
             margin-top: 20px;
         }
-        .navbar {
-            margin-bottom: 20px; /* Add padding at the top */
+        .navbar::after {
+            content: "";
+            display: block;
+            height: 100px; /* Adjust this value as needed to ensure no overlap */
         }
         table {
             margin: 0 auto; /* Center the table */
