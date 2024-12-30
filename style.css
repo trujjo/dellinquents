@@ -234,13 +234,13 @@ table td {
     margin-bottom: 20px;
     position: relative;
     width: 100%; /* Ensuring the carousel takes full width of the card */
-    max-width: 600px; /* Reduced from 700px */
+    max-width: 700px; /* Matching the width of the main content */
     margin: 0 auto; /* Center the carousel */
 }
 
 .banner-container {
     width: 100%;
-    max-width: 600px; /* Ensuring the container doesn't exceed the reduced size */
+    max-width: 700px; /* Ensuring the container doesn't exceed the card's width */
     margin: 0 auto;
     overflow: hidden;
     position: relative;
@@ -261,7 +261,7 @@ table td {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
     color: var(--text-primary);
     z-index: 2;
