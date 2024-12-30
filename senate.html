@@ -27,6 +27,7 @@
 </nav>
 
 <div class="main-content">
+    <!-- Senate Description and Table Card -->
     <div class="card animate-in">
         <h1>Senate</h1>
         <h4>Join us at one of our below meetings. Virtual meetings will be linked two days before and in-person meetings happen in 5.201 (The Boardroom) in HLB.</h4>
@@ -73,33 +74,36 @@
                 <td>In-Person</td>
             </tr>
         </table>
+    </div>
 
+    <!-- Senate Images Card -->
+    <div class="card animate-in">
         <img src="1.png" alt="Senate Image" style="width: 300px; height: auto; margin: 10px;" />
         <img src="2.png" alt="Senate Image" style="width: 300px; height: auto; margin: 10px;" />
         <img src="3.png" alt="Senate Image" style="width: 300px; height: auto; margin: 10px;" />
         <img src="4.png" alt="Senate Image" style="width: 300px; height: auto; margin: 10px;" />
+    </div>
 
-        <!-- Tabs -->
-        <div class="tab-container">
-            <div class="tab-buttons">
-                <button class="tab-link" onclick="openTab(event, 'feedbackTab')">Submit Feedback</button>
-                <button class="tab-link" onclick="openTab(event, 'minutesTab')">View Minutes</button>
-            </div>
-
-            <!-- Tab Content -->
-            <div id="feedbackTab" class="tab-content">
-                <h2>Submit Feedback</h2>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd-vL6GzG5EHOLmKyn2R34uZwVKTkIILuu4jDsiqtKreKr08w/viewform?embedded=true" title="Submit Feedback Form">Loading…</iframe>
-            </div>
-            <div id="minutesTab" class="tab-content">
-                <h2>View Minutes</h2>
-                <iframe src="https://utexas.app.box.com/embed/s/lnolj8fqjls496vntopswc257tcalzuw?expandSidebars=true&showParentPath=false&sortColumn=name" title="View Minutes">Loading…</iframe>
-            </div>
+    <!-- Tabs for Submit Feedback and View Minutes -->
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-link" onclick="toggleTab('feedbackTab')">Submit Feedback</button>
+            <button class="tab-link" onclick="toggleTab('minutesTab')">View Minutes</button>
         </div>
 
-        <div class="discord-link">
-            <a href="https://discord.gg/your-invite-link" class="discord-invite">Join Our Discord Server</a>
+        <!-- Tab Content -->
+        <div id="feedbackTab" class="tab-content">
+            <h2>Submit Feedback</h2>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd-vL6GzG5EHOLmKyn2R34uZwVKTkIILuu4jDsiqtKreKr08w/viewform?embedded=true" title="Submit Feedback Form">Loading…</iframe>
         </div>
+        <div id="minutesTab" class="tab-content">
+            <h2>View Minutes</h2>
+            <iframe src="https://utexas.app.box.com/embed/s/lnolj8fqjls496vntopswc257tcalzuw?expandSidebars=true&showParentPath=false&sortColumn=name" title="View Minutes">Loading…</iframe>
+        </div>
+    </div>
+
+    <div class="discord-link">
+        <a href="https://discord.gg/your-invite-link" class="discord-invite">Join Our Discord Server</a>
     </div>
 </div>
 
@@ -108,16 +112,18 @@
 </footer>
 
 <script>
-    // Function to open a specific tab
-    function openTab(event, tabId) {
-        const tabContents = document.querySelectorAll('.tab-content');
-        tabContents.forEach(content => content.classList.remove('active'));
+    // Function to toggle visibility of tab content
+    function toggleTab(tabId) {
+        const tabContent = document.getElementById(tabId);
+        const allTabs = document.querySelectorAll('.tab-content');
 
-        const tabLinks = document.querySelectorAll('.tab-link');
-        tabLinks.forEach(link => link.classList.remove('active'));
+        allTabs.forEach(tab => {
+            if (tab !== tabContent) {
+                tab.style.display = 'none';
+            }
+        });
 
-        document.getElementById(tabId).classList.add('active');
-        event.currentTarget.classList.add('active');
+        tabContent.style.display = tabContent.style.display === 'block' ? 'none' : 'block';
     }
 
     // Hamburger menu toggle
