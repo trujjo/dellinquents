@@ -108,7 +108,7 @@ body {
 
 /* Main Content */
 .main-content {
-    margin-top: 200px; /* Adjusted for fixed navbar height */
+    margin-top: 60px; /* Adjusted for fixed navbar height */
     padding: 2rem;
     max-width: 1200px;
     margin-left: auto;
