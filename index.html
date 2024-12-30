@@ -9,6 +9,41 @@
 <link href="https://fonts.googleapis.com/css?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="auth_check.js"></script>
 <style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            z-index: 1000; /* Ensure navbar stays above other content */
+            padding: 10px 0;
+        }
+        .nav-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 80px 20px 20px; /* Add padding-top to prevent content from hiding under navbar */
+        }
+
+
+
+    
 .main-content {
 max-width: 700px;  /* Set consistent width for main container */
 margin: 0 auto;
