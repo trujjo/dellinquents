@@ -129,6 +129,37 @@ body {
     border-color: var(--primary-color);
 }
 
+/* Table Styles */
+table {
+    width: 100%; /* Make the table take up the full width of the card */
+    margin: 0 auto; /* Center the table within the card */
+    border-collapse: collapse; /* Collapse table borders into a single border */
+    margin-top: 20px; /* Add some space at the top */
+}
+
+table th, table td {
+    padding: 12px 15px; /* Add padding to make the table content more readable */
+    text-align: center; /* Center align the text in the table cells */
+    border: 1px solid var(--border-color); /* Add borders around the table cells */
+}
+
+table th {
+    background-color: var(--bg-card); /* Set a background color for the table headers */
+    color: var(--text-primary); /* Set the text color to primary (white) */
+}
+
+table tr:nth-child(even) {
+    background-color: #333; /* Add a darker background for even rows */
+}
+
+table tr:hover {
+    background-color: var(--primary-color); /* Highlight rows on hover */
+}
+
+table td {
+    color: var(--text-secondary); /* Set the text color for table data cells */
+}
+
 /* Tab Buttons */
 .tab-buttons {
     display: flex;
