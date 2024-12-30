@@ -327,10 +327,10 @@ table td {
 }
 
 .instagram-feed {
-    width: 90%;
+    width: 100%;
 }
 
 .instagram-feed iframe {
-    width: 90%;
+    width: 100%;
     border: none;
 }
