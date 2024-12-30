@@ -157,10 +157,18 @@ body {
     border: 1px solid var(--border-color);
     border-top: none;
     background-color: var(--bg-card);
+    width: 100%; /* Make the content fill the available width */
 }
 
 .tab-content.active {
     display: block; /* Show when active */
+}
+
+/* Iframe Styles for Tabs */
+.tab-content iframe {
+    width: 100%; /* Ensure iframe fills the tab content */
+    height: 500px; /* Adjust the height as needed */
+    border: none;
 }
 
 /* Discord Button Styles (matching other buttons) */
