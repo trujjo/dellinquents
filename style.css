@@ -325,3 +325,12 @@ table td {
     max-width: 700px; /* Matching the width of the main content */
     margin: 0 auto; /* Center the card */
 }
+
+.instagram-feed {
+    width: 90%;
+}
+
+.instagram-feed iframe {
+    width: 90%;
+    border: none;
+}
