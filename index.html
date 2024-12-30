@@ -21,10 +21,12 @@
 <div class="banner card">
     <div class="banner-container swiper-container">
         <div class="swiper-wrapper">
+            <!-- Ensure these image paths are correct -->
             <div class="swiper-slide"><img src="AMIG_Fishbowl.jpg" alt="AMIG Fishbowl Event"></div>
             <div class="swiper-slide"><img src="Derm_Resident_Social_Flyer.jpg" alt="Dermatology Resident Social"></div>
             <div class="swiper-slide"><img src="Blue_Watercolor_Flowy_Script_Style_Tranquill_Motivation_Instagram_Post.png" alt="Motivation Post"></div>
         </div>
+        <!-- Ensure Swiper navigation elements are correctly targeted -->
         <div class="swiper-button-next arrow right"></div>
         <div class="swiper-button-prev arrow left"></div>
     </div>
@@ -36,6 +38,7 @@
 </div>
 
 <script>
+// Initialize Swiper
 const swiper = new Swiper('.swiper-container', {
     loop: true,
     navigation: {
