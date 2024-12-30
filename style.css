@@ -328,9 +328,12 @@ table td {
 
 .instagram-feed {
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .instagram-feed iframe {
     width: 100%;
+    height: 400px; /* Matching the height of the image carousel */
     border: none;
 }
