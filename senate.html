@@ -5,7 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Senate - Dell Med After Dark</title>
     <link rel="stylesheet" href="style.css">
-    <script src="auth_check.js"></script>
+    <style>
+        .tab-container {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            border-bottom: 2px solid #ccc;
+        }
+        .tab-buttons button {
+            flex: 1;
+            padding: 10px;
+            cursor: pointer;
+            background: #f5f5f5;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .tab-buttons button.active {
+            background: #ddd;
+            border-bottom: 2px solid #333;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+            text-align: center;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+        }
+        .discord-invite {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #7289da;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .discord-invite:hover {
+            background-color: #5a6fb2;
+        }
+    </style>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 100px;
+        }
+        a {
+            color: white !important;
+            text-decoration: none !important;
+        }
+        .content-container {
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+        .discord-link {
+            margin-top: 20px;
+        }
+        .navbar::after {
+            content: "";
+            display: block;
+            height: 100px; /* Adjust this value as needed to ensure no overlap */
+        }
+        table {
+            margin: 0 auto; /* Center the table */
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar">
@@ -19,101 +109,106 @@
         </div>
     </div>
 </nav>
+<div class="content-container">
+    <main>
+        <h1> Senate 
+          <h4>Join us at one of our below meetings. Virtual meetings will be linked two days before and in-person meetings happen in 5.201 (The Boardroom) in HLB. </h4>
+        
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Meeting Type</th>
+            </tr>
+            <tr>
+                <td>1/8/25</td>
+                <td>Virtual</td>
+            </tr>
+            <tr>
+                <td>1/22/25</td>
+                <td>In-Person</td>
+            </tr>
+            <tr>
+                <td>2/5/25</td>
+                <td>Virtual</td>
+            </tr>
+            <tr>
+                <td>2/19/25</td>
+                <td>In-Person</td>
+            </tr>
+            <tr>
+                <td>3/5/25</td>
+                <td>Virtual</td>
+            </tr>
+            <tr>
+                <td>3/18/25</td>
+                <td>Spring Break</td>
+            </tr>
+            <tr>
+                <td>3/26/25</td>
+                <td>In-Person</td>
+            </tr>
+            <tr>
+                <td>4/9/25</td>
+                <td>Virtual</td>
+            </tr>
+            <tr>
+                <td>4/23/25</td>
+                <td>In-Person</td>
+            </tr>
+        </table>
+        <img src="1.png" alt="Senate Image" style="width: 300px; height: auto; margin: 10px;" />
+        <img src="2.png" alt="Senate Image" style="width: 300px; height: auto; margin: 10px;" />
+        <img src="3.png" alt="Senate Image" style="width: 300px; height: auto; margin: 10px;" />
+        <img src="4.png" alt="Senate Image" style="width: 300px; height: auto; margin: 10px;" />
+                </section>
+            </div>
 
-<div class="main-content">
-    <h1>Senate</h1>
-    <h4>Join us at one of our below meetings. Virtual meetings will be linked two days before and in-person meetings happen in 5.201 (The Boardroom) in HLB.</h4>
+            <!-- Tabs -->
+            <div class="tab-container">
+                <!-- Tab Buttons -->
+                <div class="tab-buttons">
+                    <button class="tab-link" onclick="openTab(event, 'feedbackTab')">Submit Feedback</button>
+                    <button class="tab-link" onclick="openTab(event, 'minutesTab')">View Minutes</button>
+                </div>
 
-    <table>
-        <tr>
-            <th>Date</th>
-            <th>Meeting Type</th>
-        </tr>
-        <tr>
-            <td>1/8/25</td>
-            <td>Virtual</td>
-        </tr>
-        <tr>
-            <td>1/22/25</td>
-            <td>In-Person</td>
-        </tr>
-        <tr>
-            <td>2/5/25</td>
-            <td>Virtual</td>
-        </tr>
-        <tr>
-            <td>2/19/25</td>
-            <td>In-Person</td>
-        </tr>
-        <tr>
-            <td>3/5/25</td>
-            <td>Virtual</td>
-        </tr>
-        <tr>
-            <td>3/18/25</td>
-            <td>Spring Break</td>
-        </tr>
-        <tr>
-            <td>3/26/25</td>
-            <td>In-Person</td>
-        </tr>
-        <tr>
-            <td>4/9/25</td>
-            <td>Virtual</td>
-        </tr>
-        <tr>
-            <td>4/23/25</td>
-            <td>In-Person</td>
-        </tr>
-    </table>
+                <!-- Tab Content -->
+                <div id="feedbackTab" class="tab-content">
+                    <h2>Submit Feedback</h2>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd-vL6GzG5EHOLmKyn2R34uZwVKTkIILuu4jDsiqtKreKr08w/viewform?embedded=true" 
+                            title="Submit Feedback Form">Loading…</iframe>
+                </div>
+                <div id="minutesTab" class="tab-content">
+                    <h2>View Minutes</h2>
+                    <iframe src="https://utexas.app.box.com/embed/s/lnolj8fqjls496vntopswc257tcalzuw?expandSidebars=true&showParentPath=false&sortColumn=name" 
+                            title="View Minutes">Loading…</iframe>
+                </div>
 
-    <div class="image-gallery">
-        <img src="1.png" alt="Senate Image" />
-        <img src="2.png" alt="Senate Image" />
-        <img src="3.png" alt="Senate Image" />
-        <img src="4.png" alt="Senate Image" />
-    </div>
-
-    <!-- Tabs Section -->
-    <div class="tab-container">
-        <div class="tab-buttons">
-            <button class="tab-link" onclick="openTab(event, 'feedbackTab')">Submit Feedback</button>
-            <button class="tab-link" onclick="openTab(event, 'minutesTab')">View Minutes</button>
+                        <div class="container">
+            <div class="content">
+                <section>
+                    <a href="https://discord.gg/your-invite-link" class="discord-invite">Discord Server</a>
+            </div>
         </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Dell Med After Dark</p>
+    </footer>
+    <script>
+        // Function to open a specific tab
+        function openTab(event, tabId) {
+            // Hide all tab content
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
 
-        <div id="feedbackTab" class="tab-content">
-            <h2>Submit Feedback</h2>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd-vL6GzG5EHOLmKyn2R34uZwVKTkIILuu4jDsiqtKreKr08w/viewform?embedded=true" title="Submit Feedback Form">Loading…</iframe>
-        </div>
+            // Remove active class from all buttons
+            const tabLinks = document.querySelectorAll('.tab-link');
+            tabLinks.forEach(link => link.classList.remove('active'));
 
-        <div id="minutesTab" class="tab-content">
-            <h2>View Minutes</h2>
-            <iframe src="https://utexas.app.box.com/embed/s/lnolj8fqjls496vntopswc257tcalzuw?expandSidebars=true&showParentPath=false&sortColumn=name" title="View Minutes">Loading…</iframe>
-        </div>
-    </div>
-
-    <div class="discord-link">
-        <a href="https://discord.gg/your-invite-link" class="discord-invite">Join Our Discord Server</a>
-    </div>
-
+            // Show the clicked tab and activate its button
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 </div>
-
-<footer>
-    <p>&copy; 2024 Dell Med After Dark</p>
-</footer>
-
-<script>
-    // Function to open a specific tab
-    function openTab(event, tabId) {
-        const tabContents = document.querySelectorAll('.tab-content');
-        tabContents.forEach(content => content.classList.remove('active'));
-
-        const tabLinks = document.querySelectorAll('.tab-link');
-        tabLinks.forEach(link => link.classList.remove('active'));
-
-        document.getElementById(tabId).classList.add('active');
-        event.currentTarget.classList.add('active');
-    }
-</script>
 </body>
 </html>
