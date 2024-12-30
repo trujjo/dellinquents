@@ -298,3 +298,7 @@ table td {
 .btn:hover {
     background: #a44400;
 }
+
+.calendar-section {
+    margin-top: 60px; /* Adjust the value as needed */
+}
