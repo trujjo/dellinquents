@@ -126,12 +126,6 @@ body {
     width: 100%; /* Ensuring the cards are responsive */
     max-width: 700px; /* Matching the width of the main content */
     margin: 0 auto; /* Center the card */
-    /* Set static height */
-    height: 400px; /* Adjust height as needed */
-    display: flex;  /* Ensuring content is centered */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .card:hover {
@@ -242,12 +236,6 @@ table td {
     width: 100%; /* Ensuring the carousel takes full width of the card */
     max-width: 700px; /* Matching the width of the main content */
     margin: 0 auto; /* Center the carousel */
-    /* Set static height */
-    height: 400px; /* Adjust height as needed */
-    display: flex;  /* Ensuring content is centered */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .banner-container {
