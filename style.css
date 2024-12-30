@@ -115,7 +115,7 @@ body {
     margin-right: auto;
 }
 
-/* Minimalistic Cards */
+/* Card Styles */
 .card {
     background: var(--bg-card);
     border-radius: 8px;
@@ -129,55 +129,54 @@ body {
     border-color: var(--primary-color);
 }
 
-/* Typography */
-h1, h2, h3 {
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
+/* Tab Buttons */
+.tab-buttons {
+    display: flex;
+    gap: 1rem;
 }
 
-h1 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+.tab-buttons button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
-h2 {
-    font-size: 1.5rem;
+.tab-buttons button:hover {
+    background-color: #a44400;
 }
 
-h3 {
-    font-size: 1.25rem;
-}
-
-p {
-    margin-bottom: 1rem;
-    color: var(--text-secondary);
-}
-
-/* Table */
-table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-}
-
-table th, table td {
-    padding: 8px;
-    text-align: center;
+/* Tab Content */
+.tab-content {
+    display: none; /* Hidden by default */
+    padding: 20px;
     border: 1px solid var(--border-color);
-}
-
-table th {
+    border-top: none;
     background-color: var(--bg-card);
 }
 
-/* Footer */
-footer {
-    background: var(--bg-card);
-    padding: 1rem 0;
-    margin-top: 2rem;
+.tab-content.active {
+    display: block; /* Show when active */
+}
+
+/* Discord Button Styles (matching other buttons) */
+.discord-invite {
+    display: inline-block;
+    background-color: var(--primary-color);  /* Use same primary color as the other buttons */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
     text-align: center;
-    border-top: 1px solid var(--border-color);
-    font-size: 0.875rem;
-    color: var(--text-secondary);
+}
+
+.discord-invite:hover {
+    background-color: #a44400;  /* Same hover effect as other buttons */
 }
