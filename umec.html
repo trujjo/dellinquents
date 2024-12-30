@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="/auth_check.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UMEC - Dell Med Underground</title>
+    <title>UMEC - Dell Med After Dark</title>
     <link rel="stylesheet" href="style.css">
+    <script src="auth_check.js"></script>
 </head>
 <body>
 <nav class="navbar">
@@ -27,29 +27,62 @@
     </div>
 </nav>
 
-<main>
-    <section>
-        <h2>UMEC Content</h2>
+<div class="main-content">
+    <!-- UMEC Content Card -->
+    <div class="card animate-in">
+        <h1>UMEC - Undergraduate Medical Education Committee</h1>
         <p>The Undergraduate Medical Education Committee (UMEC) oversees the Dell Med curriculum. UMEC is made up of the general committee along with numerous subcommittees in charge of different aspects of the curriculum. You can find your class representatives here.</p>
         <p>The General UMEC committee meets monthly, and each month your MS3 representatives on the committee will send out a recap email for that month’s meetings.</p>
+    </div>
+
+    <!-- Updates from UMEC this month -->
+    <div class="card animate-in">
         <h3>Please see below for updates from UMEC this month:</h3>
+    </div>
+
+    <!-- Approve Minutes Section -->
+    <div class="card animate-in">
         <h4>Approve Minutes (VOTE) - Approved</h4>
         <p>The minutes from November’s meeting were reviewed and approved.</p>
+    </div>
+
+    <!-- C2P Course Review Section -->
+    <div class="card animate-in">
         <h4>C2P Course Review</h4>
         <p>Students are performing well in the course, with outcomes consistent with previous year averages.</p>
         <p>Areas for improvement include better alignment between the PILLARS and LGI schedules, increasing the use of “flipped classroom” experiences, and further integrating learning objectives into lecture slides.</p>
+    </div>
+
+    <!-- FOD Course Review Section -->
+    <div class="card animate-in">
         <h4>FOD Course Review</h4>
         <p>The class average and remediation rates have significantly improved compared to previous years.</p>
         <p>Opportunities for improvement include simplifying pre-work materials, aligning WCC more closely with learning objectives, and better integrating rapid-fire cases into LGI sessions.</p>
+    </div>
+
+    <!-- Elective Review Section -->
+    <div class="card animate-in">
         <h4>Elective Review</h4>
         <p>Discussed two proposed electives for approval - Cardiothoracic Intensive Care Unit and The Narrative Perspective and Reflective Writing: An Elective in Medical Humanities</p>
+    </div>
+
+    <!-- Cardiothoracic ICU Section -->
+    <div class="card animate-in">
         <h5>Cardiothoracic Intensive Care Unit - Approved</h5>
         <p>4-week critical care rotation focused on perioperative management of patients undergoing cardiac, thoracic, and aortic surgical procedures.</p>
         <p>Site Location: Ascension SMCA</p>
         <p>Course Director: Dr. Bo Kim, Dept. of Surgery and Perioperative Care</p>
+    </div>
+
+    <!-- The Narrative Perspective Section -->
+    <div class="card animate-in">
         <h5>The Narrative Perspective and Reflective Writing: An Elective in Medical Humanities - Approved</h5>
         <p>A 2-week professional development elective centered on reading and discussing prose and poetry related to stories in medicine, as well as writing reflections to foster professional identity formation.</p>
         <p>Course Director: Dr. Thomas Vetter, Dept. of Surgery and Perioperative Care</p>
+    </div>
+
+    <!-- PCFCM Working Group Report -->
+    <div class="card animate-in">
         <h4>PCFCM Working Group Report</h4>
         <p>The PCFCM working group, led by Dr. Maria Monge, is currently exploring alternative options for the clerkship structure.</p>
         <p>Current action items include:</p>
@@ -58,8 +91,8 @@
             <li>Identifying gaps through focus groups to address missing data.</li>
             <li>Evaluating external challenges within Dell Medical School and the greater Austin area.</li>
         </ul>
-    </section>
-</main>
+    </div>
+</div>
 
 <footer>
     <p>&copy; 2024 Dell Med After Dark</p>
@@ -68,7 +101,7 @@
 <script src="script.js"></script>
 
 <script>
-    // Function to open a specific tab
+    // Hamburger menu toggle
     document.getElementById("nav-toggle").addEventListener("click", function () {
         const navLinks = document.querySelector(".nav-links");
         navLinks.classList.toggle("active");
