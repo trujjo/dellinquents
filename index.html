@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dell Med After Dark</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="auth_check.js"></script>
 </head>
@@ -19,16 +17,14 @@
 
 <!-- Banner with Image Carousel -->
 <div class="banner card">
-    <div class="banner-container swiper-container">
-        <div class="swiper-wrapper">
-            <!-- Ensure these image paths are correct -->
-            <div class="swiper-slide"><img src="AMIG_Fishbowl.jpg" alt="AMIG Fishbowl Event"></div>
-            <div class="swiper-slide"><img src="Derm_Resident_Social_Flyer.jpg" alt="Dermatology Resident Social"></div>
-            <div class="swiper-slide"><img src="Blue_Watercolor_Flowy_Script_Style_Tranquill_Motivation_Instagram_Post.png" alt="Motivation Post"></div>
+    <div class="banner-container">
+        <div class="carousel-images">
+            <img src="AMIG_Fishbowl.jpg" class="active" alt="AMIG Fishbowl Event">
+            <img src="Derm_Resident_Social_Flyer.jpg" alt="Dermatology Resident Social">
+            <img src="Blue_Watercolor_Flowy_Script_Style_Tranquill_Motivation_Instagram_Post.png" alt="Motivation Post">
         </div>
-        <!-- Ensure Swiper navigation elements are correctly targeted -->
-        <div class="swiper-button-next arrow right"></div>
-        <div class="swiper-button-prev arrow left"></div>
+        <button class="arrow left" onclick="prevImage()">&#9664;</button>
+        <button class="arrow right" onclick="nextImage()">&#9654;</button>
     </div>
 </div>
 
@@ -38,17 +34,30 @@
 </div>
 
 <script>
-// Initialize Swiper
-const swiper = new Swiper('.swiper-container', {
-    loop: true,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    autoplay: {
-        delay: 3000,
-    },
-});
+const images = document.querySelectorAll('.carousel-images img');
+let currentIndex = 0;
+
+function showImage(index) {
+    images.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) {
+            img.classList.add('active');
+        }
+    });
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+}
+
+// Automatically cycle through images every 3 seconds
+setInterval(nextImage, 3000);
 </script>
 
 <!-- Navigation Bar with Hamburger Menu -->
