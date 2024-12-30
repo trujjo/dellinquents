@@ -219,3 +219,12 @@ table td {
 .discord-invite:hover {
     background-color: #a44400;  /* Same hover effect as other buttons */
 }
+
+.banner-container img {
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.banner-container img.active {
+    display: block;
+}
