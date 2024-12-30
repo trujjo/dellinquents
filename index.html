@@ -10,6 +10,8 @@
         .banner-container img {
             display: none;
             transition: opacity 0.5s ease-in-out;
+            max-width: 100%; /* Ensure images fit within the card */
+            height: auto; /* Maintain aspect ratio */
         }
 
         .banner-container img.active {
@@ -26,7 +28,7 @@
 </main>
 
 <!-- Banner with Image Carousel -->
-<div class="banner">
+<div class="banner card">
     <div class="banner-container">
         <a class="arrow left" href="#">&#9664;</a>
         <img src="AMIG_Fishbowl.jpg" class="active" alt="AMIG Fishbowl Event">
