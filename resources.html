@@ -4,29 +4,56 @@
     <script src="/auth_check.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources - Dell Med Underground</title>
+    <title>Resources - Dell Med After Dark</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="logo">Dell Med After Dark</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/senate.html">Senate</a>
+            <a href="/umec.html">UMEC</a>
+            <a href="/calendar.html">Calendar</a>
+            <a href="/resources.html">Resources</a>
+        </div>
+        <!-- Hamburger Icon (visible on small screens) -->
+        <div class="nav-toggle" id="nav-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+<div class="main-content">
+    <!-- Resources Description and Button Card -->
+    <div class="card animate-in">
         <h1>Resources</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="senate.html">Senate</a>
-            <a href="umec.html">UMEC</a>
-            <a href="calendar.html">Calendar of Events</a>
-            <a href="resources.html">Resources</a>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Resources Content</h2>
-            <p>Content for the Resources page goes here.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Dell Med After Dark</p>
-    </footer>
-    <script src="script.js"></script>
+        <p>Here are some helpful resources for Dell Med students.</p>
+        
+        <!-- Resource Buttons -->
+        <div class="resource-buttons">
+            <a href="https://app.smartsheet.com/b/form/6bc3c061549845de8d9bddde93ee79ae" class="btn" target="_blank">Absence Request</a>
+            <a href="https://app.smartsheet.com/b/form/cc90679e76d949dcab833e15c95e30a4" class="btn" target="_blank">Anytime Feedback</a>
+            <a href="https://app.smartsheet.com/b/form/1094c58e823346b6bdaa13f31395d7c6" class="btn" target="_blank">Mistreatment Form</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Dell Med After Dark</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+    // Hamburger menu toggle
+    document.getElementById("nav-toggle").addEventListener("click", function () {
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+    });
+</script>
+
 </body>
 </html>
