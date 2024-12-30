@@ -234,13 +234,13 @@ table td {
     margin-bottom: 20px;
     position: relative;
     width: 100%; /* Ensuring the carousel takes full width of the card */
-    max-width: 700px; /* Same as the other cards */
+    max-width: 600px; /* Reduced from 700px */
     margin: 0 auto; /* Center the carousel */
 }
 
 .banner-container {
     width: 100%;
-    max-width: 700px; /* Ensuring the container doesn't exceed the card's width */
+    max-width: 600px; /* Ensuring the container doesn't exceed the reduced size */
     margin: 0 auto;
     overflow: hidden;
     position: relative;
