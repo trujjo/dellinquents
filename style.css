@@ -313,3 +313,15 @@ table td {
 .btn:hover {
     background: #a44400;
 }
+
+.card {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    width: 100%; /* Ensuring the cards are responsive */
+    max-width: 700px; /* Matching the width of the main content */
+    margin: 0 auto; /* Center the card */
+}
