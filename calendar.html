@@ -8,25 +8,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Calendar of Events</h1>
-        <nav>
+
+<!-- Navigation Bar with Hamburger Menu -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="logo">Dell Med After Dark</a>
+        <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="senate.html">Senate</a>
             <a href="umec.html">UMEC</a>
             <a href="calendar.html">Calendar of Events</a>
             <a href="resources.html">Resources</a>
-        </nav>
+        </div>
+        <!-- Hamburger Icon (visible on small screens) -->
+        <div class="nav-toggle" id="nav-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <header>
+        <h1>Calendar of Events</h1>
     </header>
-    <main>
-        <section>
-            <h2>Calendar Content</h2>
-            <iframe src="https://app.smartsheet.com/b/publish?EQBCT=bf667a3f4aa6409faa14bc467dfe49ee" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Dell Med After Dark
-    </footer>
-    <script src="script.js"></script>
+
+    <section>
+        <h2>Calendar Content</h2>
+        <iframe src="https://app.smartsheet.com/b/publish?EQBCT=bf667a3f4aa6409faa14bc467dfe49ee" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </section>
+</main>
+
+<script src="script.js"></script>
+<script>
+document.getElementById("nav-toggle").addEventListener("click", function () {
+    const navLinks = document.querySelector(".nav-links");
+    navLinks.classList.toggle("active");
+});
+</script>
 </body>
 </html>
